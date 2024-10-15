@@ -12,7 +12,7 @@ function createPromise(promiseName) {
 // Function to populate the table
 function populateTable(results, totalTime) {
     const output = document.getElementById('output');
-    output.innerHTML = ''; // Clear the "Loading..." text
+    output.innerHTML = ''; // Clear the "Loading..." row
 
     results.forEach((result, index) => {
         const row = `<tr>
@@ -33,8 +33,8 @@ function populateTable(results, totalTime) {
 // Main function to create promises, wait for them to resolve, and update the table
 async function runPromises() {
     const output = document.getElementById('output');
-    // Display the loading row
-    output.innerHTML = `<tr><td colspan="2">Loading...</td></tr>`;
+    // Display the loading row with id="loading"
+    output.innerHTML = `<tr id="loading"><td colspan="2">Loading...</td></tr>`;
 
     const promises = [
         createPromise('Promise 1'),
